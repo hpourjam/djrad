@@ -28,7 +28,7 @@ def _get_data(request):
         except ValueError:
             pass
     elif request.method == "GET":
-        data = request.GET.copy()
+        data = {key: value for key, value in request.GET.copy().items()}
     return data
 
 
